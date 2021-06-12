@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    .circle {
+        width: 300px;
+        height: 300px;
+        border: 20px solid #0b0838;
+        border-radius: 50%;
+        position: absolute;
+        top: 200px;
+        left: 200px;
+        right: 200px;
+        bottom: 200px;
+        margin: auto;
+    }
+
+    .clock {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background-size: cover;
+        position: relative;
+        background-image: url("./clockimage.jpg");
+    }
+
+    .clock::before {
+        content: '';
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #000;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+    }
+
+    .hand {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform: translateX(-50%) rotate(90deg);
+        transform-origin: bottom;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+    }
+
+    .hour {
+        width: 8px;
+        height: 28%;
+        background-color: #000;
+        transform: translateX(-50%) rotate(70deg);
+        transform-origin: bottom;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        box-shadow: 10px 10px 10px #000000;
+    }
+
+    .minute {
+        width: 5px;
+        height: 38%;
+        background-color: #000;
+        transform: translateX(-50%) rotate(40deg);
+        transform-origin: bottom;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        box-shadow: 10px 10px 10px #000000;
+    }
+
+    .second {
+        width: 3px;
+        height: 40%;
+        background-color: #950740;
+        transform: translateX(-70%) rotate(150deg);
+        transform-origin: bottom;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        box-shadow: 10px 10px 10px #950740;
+    }
+
+    body {
+        background-color: lightgray;
+    }
+</style>
+
+<body>
+    <div class="circle">
+        <div class="clock">
+            <div class="hand hour"></div>
+            <div class="hand minute"></div>
+            <div class="hand second"></div>
+        </div>
+    </div>
+    <script src="clock.js" type="text/javascript"></script>
+
+</body>
+
+</html>
